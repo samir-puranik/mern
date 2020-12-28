@@ -1,5 +1,4 @@
 const graphql = require('graphql');
-const _ = require('lodash');
 
 const BookModel = require('../models/book');
 const AuthorModel = require('../models/author');
