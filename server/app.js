@@ -21,7 +21,7 @@ const username = dbcreds["username"];
 const password = dbcreds["password"];
 const dbname = dbcreds["dbname"];
 
-const dbURI = `mongodb+srv://${username}:${password}@mern-cluster.bmjrj.mongodb.net/?retryWrites=true&w=majority`;
+const dbURI = `mongodb+srv://${username}:${password}@mern-cluster.bmjrj.mongodb.net/${dbname}?retryWrites=true&w=majority`;
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.once('open', () => {
