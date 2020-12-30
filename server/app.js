@@ -7,6 +7,8 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 
+const cors = require('cors');
+
 const app = express();
 let doc;
 
@@ -27,6 +29,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.once('open', () => {
     console.log('DB OK');
 });
+
+app.use(cors());
 
 app.use('/graphql', graphqlHTTP({
     schema,
